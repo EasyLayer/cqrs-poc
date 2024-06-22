@@ -1,0 +1,33 @@
+{
+  "name": "cqrs-poc",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Yaroslav Pavliuk",
+  "license": "",
+  "scripts": {
+    "clear": "lerna run clear:db && lerna run clear:dist && lerna run clear:node_modules && rimraf node_modules && yarn cache clean",
+    "clear:node_modules": "lerna run clear:node_modules && rimraf node_modules",
+    "clear:dist": "lerna run clear:dist",
+    "clear:db": "lerna run clear:db",
+    "build:packages": "lerna run build:dev --ignore native-cars --ignore async-cqrs",
+    "start:native-cqrs-sandbox": "ts-node ./apps/native-cqrs-sandbox/src/main.ts",
+    "start:custom-cqrs-sandbox": "ts-node ./apps/custom-cqrs-sandbox/src/main.ts"
+  },
+  "private": true,
+  "packageManager": "yarn@3.6.0",
+  "workspaces": {
+    "packages": [
+      "apps/native-cqrs-sandbox",
+      "apps/custom-cqrs-sandbox",
+      "packages/*"
+    ]
+  },
+  "devDependencies": {
+    "lerna": "7.0.2",
+    "rimraf": "3.0.2",
+    "ts-node": "10.9.1"
+  },
+  "devEngines": {
+    "node": ">=18.x"
+  }
+}

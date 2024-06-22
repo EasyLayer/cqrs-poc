@@ -1,0 +1,10 @@
+{
+    "packages": [
+      "apps/native-cqrs-sandbox",
+      "apps/custom-cqrs-sandbox",
+      "packages/*"
+    ],
+    "version": "0.0.0",
+    "npmClient": "yarn"
+  }
+    
